@@ -21,6 +21,10 @@
       "description": "Apple Intelligence relay and location check domains",
       "sources": [
         {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-intelligence.list",
+          "format": "mihomo_domain"
+        },
+        {
           "path": "custom/apple_intelligence.txt",
           "format": "auto_domain"
         }

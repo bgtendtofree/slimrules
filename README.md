@@ -18,7 +18,7 @@
 | 順序 | 名稱 | 類型 | 建議策略 | 上游來源 | 說明 |
 | :---: | :--- | :--- | :--- | :--- | :--- |
 | 1 | `private` | `domain` | `DIRECT` | `MetaCubeX/meta-rules-dat` (`geosite/private`) + `custom/direct.txt` | 內網、本機保留域名與自訂直連域名 |
-| 2 | `apple_intelligence` | `domain` | `US` / `AI` | `custom/apple_intelligence.txt` | Apple Intelligence 中繼與地區校驗域名（Surge 建議加 `extended-matching`） |
+| 2 | `apple_intelligence` | `domain` | `US` / `AI` | `geosite/apple-intelligence` + `custom/apple_intelligence.txt` | Apple Intelligence 中繼與地區校驗域名（Surge 建議加 `extended-matching`） |
 | 3 | `apple_cdn` | `domain` | `DIRECT` | `felixonmars/dnsmasq-china-list` (`apple.china.conf`) | 蘋果中國大陸 CDN（自動剔除 `.apps.apple.com` 與 `.push.apple.com`） |
 | 4 | `google` | `domain` | `Google` | `geosite/google` + `geosite/google-deepmind` + `custom/google.txt` | Google 全生態（含 YouTube、Gemini、AI Studio、DeepMind 等） |
 | 5 | `ai` | `domain` | `AI` | `geosite/category-ai-!cn` + `custom/ai.txt`（扣除 `google`） | 非 Google 系海外 AI（OpenAI、Claude、Perplexity、Grok、Cursor 等） |
