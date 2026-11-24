@@ -1,0 +1,84 @@
+{
+  "rulesets": {
+    "ai": {
+      "count": 171,
+      "mihomo_mrs": "mihomo/domain/ai.mrs",
+      "mihomo_text": "mihomo/domain/ai.txt",
+      "sha256": "b494d01a5646248cfd7f52a25d81adf7c8385efa2b2113c5e456aec7f3a97667",
+      "surge": "surge/domainset/ai.list",
+      "type": "domain"
+    },
+    "ai_ip": {
+      "count": 409,
+      "mihomo_mrs": "mihomo/ip/ai_ip.mrs",
+      "mihomo_text": "mihomo/ip/ai_ip.txt",
+      "sha256": "d57d601d8a2707260debf3445ad139a7a9725605b836643ba2689acf15465ac0",
+      "surge": "surge/ip/ai_ip.list",
+      "type": "ip"
+    },
+    "apple_cdn": {
+      "count": 159,
+      "mihomo_mrs": "mihomo/domain/apple_cdn.mrs",
+      "mihomo_text": "mihomo/domain/apple_cdn.txt",
+      "sha256": "ac75836c7c89659ec56f9da629ca91c8f13cb10852d9dda60ee63a55e76ac608",
+      "surge": "surge/domainset/apple_cdn.list",
+      "type": "domain"
+    },
+    "cn": {
+      "count": 110177,
+      "mihomo_mrs": "mihomo/domain/cn.mrs",
+      "mihomo_text": "mihomo/domain/cn.txt",
+      "sha256": "54430b0966d1149256f5addb6aaa55482d1a28e7ba31d4120a36af430e6be1f3",
+      "surge": "surge/domainset/cn.list",
+      "type": "domain"
+    },
+    "cn_ip": {
+      "count": 7331,
+      "mihomo_mrs": "mihomo/ip/cn_ip.mrs",
+      "mihomo_text": "mihomo/ip/cn_ip.txt",
+      "sha256": "b1b1272cc0f261080846909d3cd86a2f6c79414b5ac7e501347baa0b6e0a11c2",
+      "surge": "surge/ip/cn_ip.list",
+      "type": "ip"
+    },
+    "google": {
+      "count": 849,
+      "mihomo_mrs": "mihomo/domain/google.mrs",
+      "mihomo_text": "mihomo/domain/google.txt",
+      "sha256": "e2f2f909b79043cbeb5cf588aa7117292c4c6909c13157936481661f21123674",
+      "surge": "surge/domainset/google.list",
+      "type": "domain"
+    },
+    "private": {
+      "count": 132,
+      "mihomo_mrs": "mihomo/domain/private.mrs",
+      "mihomo_text": "mihomo/domain/private.txt",
+      "sha256": "d2028cded1294f9851d04263e111df9e94c4b2d262d855e778a8cf77f552392c",
+      "surge": "surge/domainset/private.list",
+      "type": "domain"
+    },
+    "private_ip": {
+      "count": 28,
+      "mihomo_mrs": "mihomo/ip/private_ip.mrs",
+      "mihomo_text": "mihomo/ip/private_ip.txt",
+      "sha256": "700a517641634c1dc5018180123c7226c4c1ced072bda18554fc446baf747f16",
+      "surge": "surge/ip/private_ip.list",
+      "type": "ip"
+    },
+    "proxy": {
+      "count": 26550,
+      "mihomo_mrs": "mihomo/domain/proxy.mrs",
+      "mihomo_text": "mihomo/domain/proxy.txt",
+      "sha256": "5be131e68f58dc2bcaca0f830da9829b4407d48472a761a979ef9e4361a4d50a",
+      "surge": "surge/domainset/proxy.list",
+      "type": "domain"
+    },
+    "telegram_ip": {
+      "count": 11,
+      "mihomo_mrs": "mihomo/ip/telegram_ip.mrs",
+      "mihomo_text": "mihomo/ip/telegram_ip.txt",
+      "sha256": "b5d92007768b9d64212f57398d98dd12b1ba7f80a1aa4003edb117db5d2f4a25",
+      "surge": "surge/ip/telegram_ip.list",
+      "type": "ip"
+    }
+  }
+}
