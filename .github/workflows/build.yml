@@ -95,6 +95,7 @@ jobs:
           manifest = json.loads((dist / "manifest.json").read_text(encoding="utf-8"))
           expected = {
               "private",
+              "apple_intelligence",
               "apple_cdn",
               "google",
               "ai",

@@ -16,6 +16,17 @@
       ]
     },
     {
+      "name": "apple_intelligence",
+      "type": "domain",
+      "description": "Apple Intelligence relay and location check domains",
+      "sources": [
+        {
+          "path": "custom/apple_intelligence.txt",
+          "format": "auto_domain"
+        }
+      ]
+    },
+    {
       "name": "apple_cdn",
       "type": "domain",
       "description": "Apple China mainland CDN domains (excluding apps.apple.com and push.apple.com)",

@@ -1,0 +1,6 @@
+# Apple Intelligence relay & geod domains (exact match)
+apple-relay.fastly-edge.com
+apple-relay.cloudflare.com
+apple-relay.apple.com
+cp4.cloudflare.com
+gspe1-ssl.ls.apple.com

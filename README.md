@@ -18,15 +18,16 @@
 | 順序 | 名稱 | 類型 | 建議策略 | 上游來源 | 說明 |
 | :---: | :--- | :--- | :--- | :--- | :--- |
 | 1 | `private` | `domain` | `DIRECT` | `MetaCubeX/meta-rules-dat` (`geosite/private`) + `custom/direct.txt` | 內網、本機保留域名與自訂直連域名 |
-| 2 | `apple_cdn` | `domain` | `DIRECT` | `felixonmars/dnsmasq-china-list` (`apple.china.conf`) | 蘋果中國大陸 CDN（自動剔除 `.apps.apple.com` 與 `.push.apple.com`） |
-| 3 | `google` | `domain` | `Google` | `geosite/google` + `geosite/google-deepmind` + `custom/google.txt` | Google 全生態（含 YouTube、Gemini、AI Studio、DeepMind 等） |
-| 4 | `ai` | `domain` | `AI` | `geosite/category-ai-!cn` + `custom/ai.txt`（扣除 `google`） | 非 Google 系海外 AI（OpenAI、Claude、Perplexity、Grok、Cursor 等） |
-| 5 | `cn` | `domain` | `DIRECT` | `geosite/cn` | 中國大陸常見域名 |
-| 6 | `proxy` | `domain` | `Proxy` | `geosite/geolocation-!cn` + `custom/proxy.txt` | 常見海外域名（於域名層攔截，避免落到 `cn_ip` 觸發 DNS 污染） |
-| 7 | `private_ip` | `ip` | `DIRECT` | `geoip/private` | 私有 / 保留網段（Surge 帶 `no-resolve`；Surge 亦可改用內建 `LAN`） |
-| 8 | `telegram_ip` | `ip` | `Proxy` | `https://core.telegram.org/resources/cidr.txt` | Telegram 官方 IP 段（Surge 帶 `no-resolve`） |
-| 9 | `ai_ip` | `ip` | `AI` | `https://openai.com/chatgpt-voice.json` + `custom/ai_ip.txt` | ChatGPT Voice 官方即時語音 IP 段（Surge 帶 `no-resolve`） |
-| 10 | `cn_ip` | `ip` | `DIRECT` | `misakaio/chnroutes2` + `gaoyifan/china-operator-ip` | 中國大陸 IPv4 + IPv6 段（**不帶 `no-resolve`**，負責兜底未收錄的國內網站） |
+| 2 | `apple_intelligence` | `domain` | `US` / `AI` | `custom/apple_intelligence.txt` | Apple Intelligence 中繼與地區校驗域名（Surge 建議加 `extended-matching`） |
+| 3 | `apple_cdn` | `domain` | `DIRECT` | `felixonmars/dnsmasq-china-list` (`apple.china.conf`) | 蘋果中國大陸 CDN（自動剔除 `.apps.apple.com` 與 `.push.apple.com`） |
+| 4 | `google` | `domain` | `Google` | `geosite/google` + `geosite/google-deepmind` + `custom/google.txt` | Google 全生態（含 YouTube、Gemini、AI Studio、DeepMind 等） |
+| 5 | `ai` | `domain` | `AI` | `geosite/category-ai-!cn` + `custom/ai.txt`（扣除 `google`） | 非 Google 系海外 AI（OpenAI、Claude、Perplexity、Grok、Cursor 等） |
+| 6 | `cn` | `domain` | `DIRECT` | `geosite/cn` | 中國大陸常見域名 |
+| 7 | `proxy` | `domain` | `Proxy` | `geosite/geolocation-!cn` + `custom/proxy.txt` | 常見海外域名（於域名層攔截，避免落到 `cn_ip` 觸發 DNS 污染） |
+| 8 | `private_ip` | `ip` | `DIRECT` | `geoip/private` | 私有 / 保留網段（Surge 帶 `no-resolve`；Surge 亦可改用內建 `LAN`） |
+| 9 | `telegram_ip` | `ip` | `Proxy` | `https://core.telegram.org/resources/cidr.txt` | Telegram 官方 IP 段（Surge 帶 `no-resolve`） |
+| 10 | `ai_ip` | `ip` | `AI` | `https://openai.com/chatgpt-voice.json` + `custom/ai_ip.txt` | ChatGPT Voice 官方即時語音 IP 段（Surge 帶 `no-resolve`） |
+| 11 | `cn_ip` | `ip` | `DIRECT` | `misakaio/chnroutes2` + `gaoyifan/china-operator-ip` | 中國大陸 IPv4 + IPv6 段（**不帶 `no-resolve`**，負責兜底未收錄的國內網站） |
 
 > **關鍵規則紀律**：所有域名規則（`domainset` / `domain`）**必須**放在全部 `ip` 規則之前；`google` 必須放在 `ai` 之前。
 
@@ -42,6 +43,7 @@
 [Rule]
 # 1. 純域名層（不觸發 DNS）
 DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/private.list,DIRECT
+DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/apple_intelligence.list,US,extended-matching
 DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/apple_cdn.list,DIRECT
 DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/google.list,Google
 DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/ai.list,AI
@@ -69,6 +71,13 @@ rule-providers:
     interval: 43200
     url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/domain/private.mrs
     path: ./slimrules/private.mrs
+  apple_intelligence:
+    type: http
+    behavior: domain
+    format: mrs
+    interval: 43200
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/domain/apple_intelligence.mrs
+    path: ./slimrules/apple_intelligence.mrs
   apple_cdn:
     type: http
     behavior: domain
@@ -136,6 +145,7 @@ rule-providers:
 rules:
   # 1. 純域名層
   - RULE-SET,private,DIRECT
+  - RULE-SET,apple_intelligence,US
   - RULE-SET,apple_cdn,DIRECT
   - RULE-SET,google,Google
   - RULE-SET,ai,AI
@@ -163,6 +173,7 @@ rules:
 直接編輯 [`custom/`](custom/) 目錄下的對應檔案（`#` 開頭為註釋）：
 
 - `custom/direct.txt`：追加到 `private`（內網 NAS、PT 等）
+- `custom/apple_intelligence.txt`：Apple Intelligence 中繼與地區校驗域名
 - `custom/google.txt`：追加到 `google`，**並自動從 `ai` 中扣除**
 - `custom/ai.txt`：追加到 `ai`
 - `custom/ai_ip.txt`：追加到 `ai_ip`
