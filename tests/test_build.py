@@ -284,6 +284,28 @@ class TestEndToEndLocalBuild(unittest.TestCase):
                     (out2 / rel).read_bytes(),
                 )
 
+    def test_compile_mrs_resolves_relative_binary(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            fake_bin = root / "mihomo"
+            fake_bin.write_text("#!/bin/sh\necho ok > \"$5\"\n", encoding="utf-8")
+            fake_bin.chmod(0o755)
+
+            txt = root / "in.txt"
+            txt.write_text("+.openai.com\n", encoding="utf-8")
+            mrs = root / "out.mrs"
+
+            import os
+
+            old_cwd = os.getcwd()
+            try:
+                os.chdir(root)
+                build.compile_mrs(Path("./mihomo"), "domain", txt, mrs)
+            finally:
+                os.chdir(old_cwd)
+
+            self.assertEqual(mrs.read_text(encoding="utf-8").strip(), "ok")
+
 
 if __name__ == "__main__":
     unittest.main()

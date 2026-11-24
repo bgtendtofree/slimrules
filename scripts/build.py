@@ -388,7 +388,14 @@ def format_surge_header(name: str, description: str, count: int, body_sha256: st
 def compile_mrs(mihomo_bin: Path, behavior: str, txt_path: Path, mrs_path: Path) -> None:
     """Compile a Mihomo text ruleset into binary .mrs format."""
     mrs_path.parent.mkdir(parents=True, exist_ok=True)
-    cmd = [str(mihomo_bin), "convert-ruleset", behavior, "text", str(txt_path), str(mrs_path)]
+    cmd = [
+        str(mihomo_bin.resolve()),
+        "convert-ruleset",
+        behavior,
+        "text",
+        str(txt_path),
+        str(mrs_path),
+    ]
     proc = subprocess.run(cmd, capture_output=True, text=True, check=False)
     if proc.returncode != 0:
         raise RuntimeError(
