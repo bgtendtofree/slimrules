@@ -25,10 +25,10 @@
       "type": "domain"
     },
     "apple_intelligence": {
-      "count": 5,
+      "count": 6,
       "mihomo_mrs": "mihomo/domain/apple_intelligence.mrs",
       "mihomo_text": "mihomo/domain/apple_intelligence.txt",
-      "sha256": "257301e50c5793583671bbf3e854e3636a33a52bb60196381634e5ae8064772c",
+      "sha256": "37613ba59288d249cad48bdb5fd856ec14782862396b843a8b8139ea2f57fc39",
       "surge": "surge/domainset/apple_intelligence.list",
       "type": "domain"
     },
