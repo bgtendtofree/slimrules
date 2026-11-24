@@ -34,25 +34,25 @@
 
 ## 快速配置範例
 
-將下方 URL 中的 `<USER>` 替換為你的 GitHub 用戶名（若需加速亦可自行套用鏡像/反代）：
+直接複製以下規則訂閱配置（若需在國內加速，可自行在 URL 前套用反代或鏡像）：
 
 ### Surge
 
 ```ini
 [Rule]
 # 1. 純域名層（不觸發 DNS）
-DOMAIN-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/domainset/private.list,DIRECT
-DOMAIN-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/domainset/apple_cdn.list,DIRECT
-DOMAIN-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/domainset/google.list,Google
-DOMAIN-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/domainset/ai.list,AI
-DOMAIN-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/domainset/cn.list,DIRECT
-DOMAIN-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/domainset/proxy.list,Proxy
+DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/private.list,DIRECT
+DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/apple_cdn.list,DIRECT
+DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/google.list,Google
+DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/ai.list,AI
+DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/cn.list,DIRECT
+DOMAIN-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/domainset/proxy.list,Proxy
 
 # 2. IP 層（置於全部域名規則之後）
 RULE-SET,LAN,DIRECT
-RULE-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/ip/telegram_ip.list,Proxy
-RULE-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/ip/ai_ip.list,AI
-RULE-SET,https://raw.githubusercontent.com/<USER>/slimrules/release/surge/ip/cn_ip.list,DIRECT
+RULE-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/ip/telegram_ip.list,Proxy
+RULE-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/ip/ai_ip.list,AI
+RULE-SET,https://raw.githubusercontent.com/bgtendtofree/slimrules/release/surge/ip/cn_ip.list,DIRECT
 
 # 3. 兜底
 FINAL,Proxy,dns-failed
@@ -67,70 +67,70 @@ rule-providers:
     behavior: domain
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/domain/private.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/domain/private.mrs
     path: ./slimrules/private.mrs
   apple_cdn:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/domain/apple_cdn.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/domain/apple_cdn.mrs
     path: ./slimrules/apple_cdn.mrs
   google:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/domain/google.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/domain/google.mrs
     path: ./slimrules/google.mrs
   ai:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/domain/ai.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/domain/ai.mrs
     path: ./slimrules/ai.mrs
   cn:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/domain/cn.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/domain/cn.mrs
     path: ./slimrules/cn.mrs
   proxy:
     type: http
     behavior: domain
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/domain/proxy.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/domain/proxy.mrs
     path: ./slimrules/proxy.mrs
   private_ip:
     type: http
     behavior: ipcidr
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/ip/private_ip.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/ip/private_ip.mrs
     path: ./slimrules/private_ip.mrs
   telegram_ip:
     type: http
     behavior: ipcidr
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/ip/telegram_ip.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/ip/telegram_ip.mrs
     path: ./slimrules/telegram_ip.mrs
   ai_ip:
     type: http
     behavior: ipcidr
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/ip/ai_ip.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/ip/ai_ip.mrs
     path: ./slimrules/ai_ip.mrs
   cn_ip:
     type: http
     behavior: ipcidr
     format: mrs
     interval: 43200
-    url: https://raw.githubusercontent.com/<USER>/slimrules/release/mihomo/ip/cn_ip.mrs
+    url: https://raw.githubusercontent.com/bgtendtofree/slimrules/release/mihomo/ip/cn_ip.mrs
     path: ./slimrules/cn_ip.mrs
 
 rules:
@@ -187,7 +187,7 @@ python3 scripts/build.py --output dist --mihomo-bin /path/to/mihomo
 
 1. 在 GitHub 建立新倉庫（例如 `slimrules`），將本倉庫 `main` 分支推送上去：
    ```bash
-   git remote add origin https://github.com/<USER>/slimrules.git
+   git remote add origin https://github.com/bgtendtofree/slimrules.git
    git push -u origin main
    ```
 2. `push` 後會自動觸發 `.github/workflows/build.yml`（需確保倉庫 Settings → Actions → General 中 Workflow permissions 允許 **Read and write permissions**，且 workflow 本身已宣告 `contents: write`）。
