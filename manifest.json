@@ -24,6 +24,14 @@
       "surge": "surge/domainset/apple_cdn.list",
       "type": "domain"
     },
+    "apple_intelligence": {
+      "count": 5,
+      "mihomo_mrs": "mihomo/domain/apple_intelligence.mrs",
+      "mihomo_text": "mihomo/domain/apple_intelligence.txt",
+      "sha256": "257301e50c5793583671bbf3e854e3636a33a52bb60196381634e5ae8064772c",
+      "surge": "surge/domainset/apple_intelligence.list",
+      "type": "domain"
+    },
     "cn": {
       "count": 110177,
       "mihomo_mrs": "mihomo/domain/cn.mrs",

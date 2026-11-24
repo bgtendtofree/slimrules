@@ -1,0 +1,9 @@
+# Name: slimrules - apple_intelligence
+# Description: Apple Intelligence relay and location check domains
+# Count: 5
+# SHA256: 257301e50c5793583671bbf3e854e3636a33a52bb60196381634e5ae8064772c
+apple-relay.apple.com
+apple-relay.cloudflare.com
+apple-relay.fastly-edge.com
+cp4.cloudflare.com
+gspe1-ssl.ls.apple.com
