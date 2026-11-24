@@ -1,0 +1,6 @@
+# Custom AI IP CIDRs (merged into `ai_ip`).
+# Supported syntax (one entry per line, `#` for comments):
+#   192.0.2.0/24
+#   2001:db8::/32
+#   198.51.100.1
+#   IP-CIDR,192.0.2.0/24,no-resolve

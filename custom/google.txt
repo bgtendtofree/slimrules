@@ -1,0 +1,28 @@
+# Custom Google & Google AI domains (merged into `google` and automatically subtracted from `ai`).
+# Supported syntax (one entry per line, `#` for comments):
+#   .example.com          -> domain suffix (matches example.com and *.example.com)
+#   +.example.com         -> domain suffix
+#   DOMAIN-SUFFIX,x.com   -> domain suffix
+#   example.com           -> exact domain only
+#   DOMAIN,x.com          -> exact domain only
+
+.antigravity.google
+.antigravity-unleash.goog
+daily-cloudcode-pa.googleapis.com
+daily-cloudcode-pa.sandbox.googleapis.com
+aicode.googleapis.com
+.g.ai
+.ai.studio
+ai.google.dev
+.generativeai.google
+.notebooklm.google
+.notebooklm.google.com
+jules.google.com
+aida.googleapis.com
+aisandbox-pa.googleapis.com
+robinfrontend-pa.googleapis.com
+geller-pa.googleapis.com
+proactivebackend-pa.googleapis.com
+cloudcode-pa.googleapis.com
+.deepmind.com
+.deepmind.google

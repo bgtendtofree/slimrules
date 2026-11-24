@@ -1,0 +1,43 @@
+# Custom non-Google AI domains (merged into `ai`, after which `google` is subtracted).
+# Supported syntax (one entry per line, `#` for comments):
+#   .example.com          -> domain suffix (matches example.com and *.example.com)
+#   +.example.com         -> domain suffix
+#   DOMAIN-SUFFIX,x.com   -> domain suffix
+#   example.com           -> exact domain only
+#   DOMAIN,x.com          -> exact domain only
+
+# OpenAI / ChatGPT
+.openai.com
+.oaistatic.com
+.chatgpt.com
+.chatgpt.site
+.sora.com
+.chat.com
+.ai.com
+
+# Anthropic / Claude
+.anthropic.com
+.claude.ai
+.claude.com
+claude.site
+bridge.claudeusercontent.com
+.clau.de
+
+# Perplexity / xAI / Groq / Meta / Poe / Dify / OpenRouter / Cloudflare AI Gateway
+.perplexity.ai
+.grok.com
+.x.ai
+.groq.com
+.meta.ai
+.poe.com
+.dify.ai
+openrouter.ai
+gateway.ai.cloudflare.com
+
+# AI Coding Tools
+.cursor.sh
+server.codeium.com
+inference.codeium.com
+server.self-serve.windsurf.com
+cloud.zed.dev
+api.jetbrains.ai

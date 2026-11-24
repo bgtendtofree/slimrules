@@ -1,0 +1,153 @@
+{
+  "rulesets": [
+    {
+      "name": "private",
+      "type": "domain",
+      "description": "LAN, loopback, and custom direct domains",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.list",
+          "format": "mihomo_domain"
+        },
+        {
+          "path": "custom/direct.txt",
+          "format": "auto_domain"
+        }
+      ]
+    },
+    {
+      "name": "apple_cdn",
+      "type": "domain",
+      "description": "Apple China mainland CDN domains (excluding apps.apple.com and push.apple.com)",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf",
+          "format": "dnsmasq"
+        }
+      ],
+      "excludes": [
+        ".apps.apple.com",
+        ".push.apple.com"
+      ]
+    },
+    {
+      "name": "google",
+      "type": "domain",
+      "description": "Full Google ecosystem including YouTube, Gemini, AI Studio, DeepMind, and Google AI",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.list",
+          "format": "mihomo_domain"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-deepmind.list",
+          "format": "mihomo_domain"
+        },
+        {
+          "path": "custom/google.txt",
+          "format": "auto_domain"
+        }
+      ]
+    },
+    {
+      "name": "ai",
+      "type": "domain",
+      "description": "Non-Google international AI services (OpenAI, Anthropic, Perplexity, xAI, Cursor, etc.)",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.list",
+          "format": "mihomo_domain"
+        },
+        {
+          "path": "custom/ai.txt",
+          "format": "auto_domain"
+        }
+      ],
+      "subtract_rulesets": [
+        "google"
+      ]
+    },
+    {
+      "name": "cn",
+      "type": "domain",
+      "description": "China mainland domains",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.list",
+          "format": "mihomo_domain"
+        }
+      ]
+    },
+    {
+      "name": "proxy",
+      "type": "domain",
+      "description": "Common non-CN domains matched at domain layer to avoid premature DNS lookup",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list",
+          "format": "mihomo_domain"
+        },
+        {
+          "path": "custom/proxy.txt",
+          "format": "auto_domain"
+        }
+      ]
+    },
+    {
+      "name": "private_ip",
+      "type": "ip",
+      "surge_no_resolve": true,
+      "description": "Private, loopback, and reserved IP ranges",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.list",
+          "format": "cidr"
+        }
+      ]
+    },
+    {
+      "name": "telegram_ip",
+      "type": "ip",
+      "surge_no_resolve": true,
+      "description": "Telegram official IP CIDR ranges",
+      "sources": [
+        {
+          "url": "https://core.telegram.org/resources/cidr.txt",
+          "format": "cidr"
+        }
+      ]
+    },
+    {
+      "name": "ai_ip",
+      "type": "ip",
+      "surge_no_resolve": true,
+      "description": "OpenAI ChatGPT Voice official IP ranges and custom AI CIDRs",
+      "sources": [
+        {
+          "url": "https://openai.com/chatgpt-voice.json",
+          "format": "openai_json"
+        },
+        {
+          "path": "custom/ai_ip.txt",
+          "format": "cidr"
+        }
+      ]
+    },
+    {
+      "name": "cn_ip",
+      "type": "ip",
+      "surge_no_resolve": false,
+      "description": "China mainland IPv4 (chnroutes2) and IPv6 (china-operator-ip) CIDR ranges",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/misakaio/chnroutes2/master/chnroutes.txt",
+          "format": "cidr"
+        },
+        {
+          "url": "https://gaoyifan.github.io/china-operator-ip/china6.txt",
+          "format": "cidr"
+        }
+      ]
+    }
+  ]
+}

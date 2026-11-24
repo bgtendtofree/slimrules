@@ -1,0 +1,7 @@
+# Custom direct domains (merged into `private`).
+# Supported syntax (one entry per line, `#` for comments):
+#   .example.com          -> domain suffix (matches example.com and *.example.com)
+#   +.example.com         -> domain suffix
+#   DOMAIN-SUFFIX,x.com   -> domain suffix
+#   example.com           -> exact domain only
+#   DOMAIN,x.com          -> exact domain only
