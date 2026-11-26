@@ -41,10 +41,10 @@
       "type": "domain"
     },
     "cn_ip": {
-      "count": 7375,
+      "count": 7333,
       "mihomo_mrs": "mihomo/ip/cn_ip.mrs",
       "mihomo_text": "mihomo/ip/cn_ip.txt",
-      "sha256": "8b0f5217cc965a74ff21a5becd83afc7043064d2deb4a113ad5e9325cfacb4d9",
+      "sha256": "b073448da4f95b7b6cb15f6320d100e3b8f809ed55b5a69f577f476aef31a7da",
       "surge": "surge/ip/cn_ip.list",
       "type": "ip"
     },
@@ -73,10 +73,10 @@
       "type": "ip"
     },
     "proxy": {
-      "count": 26555,
+      "count": 26566,
       "mihomo_mrs": "mihomo/domain/proxy.mrs",
       "mihomo_text": "mihomo/domain/proxy.txt",
-      "sha256": "46393f3e4d787119622f80c9225b8a3c86c266c745c1ee5deb54e1794c2a6f68",
+      "sha256": "363800ee3b4732e7184850622d40b945ac4921777a84ddff11e9d50501914e55",
       "surge": "surge/domainset/proxy.list",
       "type": "domain"
     },
