@@ -41,10 +41,10 @@
       "type": "domain"
     },
     "cn_ip": {
-      "count": 7333,
+      "count": 7332,
       "mihomo_mrs": "mihomo/ip/cn_ip.mrs",
       "mihomo_text": "mihomo/ip/cn_ip.txt",
-      "sha256": "b073448da4f95b7b6cb15f6320d100e3b8f809ed55b5a69f577f476aef31a7da",
+      "sha256": "a0b76b8c57711cca2ad1164e7bd0c7e6e0d6ecd975c145f0fe17318ca2299051",
       "surge": "surge/ip/cn_ip.list",
       "type": "ip"
     },
